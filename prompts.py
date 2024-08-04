@@ -51,8 +51,8 @@ following tips.
 
 DESCRIPTION = """We're currently solving the following issue within our repository. 
 Here's the issue text:
-  ISSUE: {issue}
-  REPO: {repo}
+  ISSUE TITLE: {issue_title}
+  DESCRIPTION: {issue_description}
 
 Now, you're going to solve this issue on your own. When you're satisfied with all
 of the changes you've made, you can submit your changes to the code base by simply

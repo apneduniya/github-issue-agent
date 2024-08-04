@@ -2,6 +2,7 @@ from inputs import from_github
 
 from agent import composio_toolset, crew
 from composio import Action
+from event_handler import listener
 
 
 def main() -> None:
@@ -25,5 +26,8 @@ def main() -> None:
         print("No output available")
 
 
+
 if __name__ == "__main__":
-    main()
+    # main()
+    print("Subscription created!")
+    listener.listen()

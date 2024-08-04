@@ -4,7 +4,7 @@ import os
 
 import dotenv
 from crewai import Agent, Crew, Process, Task
-from custom_tools import say
+# from custom_tools import say
 from langchain_openai import ChatOpenAI
 from prompts import BACKSTORY, DESCRIPTION, EXPECTED_OUTPUT, GOAL, ROLE
 
@@ -29,11 +29,11 @@ tools = [
             App.SHELLTOOL,
         ]
     ),
-    *composio_toolset.get_actions(
-        actions=[
-            say,  # This is just here as an example of a custom tool, you can remove it
-        ]
-    ),
+    # *composio_toolset.get_actions(
+    #     actions=[
+    #         say,  # This is just here as an example of a custom tool, you can remove it
+    #     ]
+    # ),
 ]
 
 # Define agent
@@ -61,3 +61,8 @@ crew = Crew(
     cache=False,
     memory=True,
 )
+
+
+
+listener = composio_toolset.create_trigger_listener() 
+
