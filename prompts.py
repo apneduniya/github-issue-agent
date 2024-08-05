@@ -51,6 +51,7 @@ following tips.
 
 DESCRIPTION = """We're currently solving the following issue within our repository. 
 Here's the issue text:
+  REPO: {repo_name}
   ISSUE TITLE: {issue_title}
   DESCRIPTION: {issue_description}
 

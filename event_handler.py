@@ -11,6 +11,7 @@ def callback_function(event: TriggerCallback):
     payload: dict = event.originalPayload
 
     # Extract necessary data from the payload
+    repo_name: str = payload["repository"]["full_name"]
     issue_title: str = payload["issue"]["title"]
     issue_description: str = payload["issue"]["body"]
     issue_labels: t.List[dict] = payload["issue"]["labels"]
@@ -26,6 +27,7 @@ def callback_function(event: TriggerCallback):
 
     crew.kickoff(
         inputs={
+            "repo_name": repo_name,
             "issue_title": issue_title,
             "issue_description": issue_description,
         }
