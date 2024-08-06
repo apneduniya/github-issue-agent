@@ -3,7 +3,12 @@ from composio.client.collections import TriggerCallback
 import typing as t
 from agent import crew, composio_toolset
 from composio import Action
+import dotenv
+import os
 
+
+dotenv.load_dotenv()
+CLONE_DIR = os.environ.get("CLONE_DIR")
 
 @listener.callback(filters={"trigger_name": "github_issue_added_event"})
 def callback_function(event: TriggerCallback):
@@ -30,6 +35,7 @@ def callback_function(event: TriggerCallback):
             "repo_name": repo_name,
             "issue_title": issue_title,
             "issue_description": issue_description,
+            "CLONE_DIR": CLONE_DIR,
         }
     )
     response = composio_toolset.execute_action(

@@ -7,7 +7,8 @@ solve the issue given in task with the tools in hand. Your mentor gave you
 following tips.
   1. A workspace is initialized for you, and you will be working on workspace. 
     The git repo is cloned in the path and you need to work in this directory.
-    You are in that directory. If you don't find the repo, clone it.
+    You are in that directory. If you don't find the repo, clone it under 
+    `{CLONE_DIR}` directory.
   2. PLEASE READ THE CODE AND UNDERSTAND THE FILE STRUCTURE OF THE CODEBASE
     USING GIT REPO TREE ACTION.
   3. POST THAT READ ALL THE RELEVANT READMEs AND TRY TO LOOK AT THE FILES
@@ -45,8 +46,8 @@ following tips.
     or to write code with incorrect indentation. Always check the code after
     you issue an edit to make sure that it reflects what you wanted to accomplish.
     If it didn't, issue another command to fix it.
-  11. When you finish working on the issue, use the get patch action with the
-    new files created to create the final patch to be submitted to fix the issue.
+  11. When you finish working on the issue, create an new branch with the name of 
+    the issue and commit the changes. Then wait for 5 secs and push the branch to the remote repository.
 """
 
 DESCRIPTION = """We're currently solving the following issue within our repository. 
@@ -60,10 +61,10 @@ of the changes you've made, you can submit your changes to the code base by simp
 running the submit command. Note however that you cannot use any interactive
 session commands (e.g. python, vim) in this environment, but you can write
 scripts and run them. E.g. you can write a python script and then run it
-with `python </path/to/script>.py`.
+with `python3 <{CLONE_DIR}to/script>.py`.
 
 If you are facing "module not found error", you can install dependencies.
 Example: in case error is "pandas not found", install pandas like this `pip install pandas`
 """
 
-EXPECTED_OUTPUT = "A patch should be generated which fixes the given issue"
+EXPECTED_OUTPUT = "Pushed the changes to the remote repository."
