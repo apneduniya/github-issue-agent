@@ -46,8 +46,11 @@ following tips.
     or to write code with incorrect indentation. Always check the code after
     you issue an edit to make sure that it reflects what you wanted to accomplish.
     If it didn't, issue another command to fix it.
-  11. When you finish working on the issue, create an new branch with the name of 
-    the issue and commit the changes. Then wait for 5 secs and push the branch to the remote repository.
+  11. When you finish working on the issue, use the get patch action with the
+    new files created to create the final patch to be submitted to fix the issue.
+  12. When you are done working on the issue, create a branch with the corrected code.
+  13. Create a PR with the corrected code.
+RESPOND WITH "PATCH COMPLETED" WHEN YOU ARE DONE WORKING ON THE ISSUE.
 """
 
 DESCRIPTION = """We're currently solving the following issue within our repository. 
@@ -61,7 +64,7 @@ of the changes you've made, you can submit your changes to the code base by simp
 running the submit command. Note however that you cannot use any interactive
 session commands (e.g. python, vim) in this environment, but you can write
 scripts and run them. E.g. you can write a python script and then run it
-with `python3 <{CLONE_DIR}to/script>.py`.
+with `python3 <{CLONE_DIR}to/script>.py > {CLONE_DIR}test_output.txt`.
 
 If you are facing "module not found error", you can install dependencies.
 Example: in case error is "pandas not found", install pandas like this `pip install pandas`

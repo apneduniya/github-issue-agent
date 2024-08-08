@@ -29,11 +29,12 @@ tools = [
             App.SHELLTOOL,
         ]
     ),
-    # *composio_toolset.get_actions(
-    #     actions=[
-    #         say,  # This is just here as an example of a custom tool, you can remove it
-    #     ]
-    # ),
+    *composio_toolset.get_actions(
+        actions=[
+            # say,  # This is just here as an example of a custom tool, you can remove it
+            Action.GITHUB_CREATE_A_PULL_REQUEST
+        ]
+    ),
 ]
 
 # Define agent
